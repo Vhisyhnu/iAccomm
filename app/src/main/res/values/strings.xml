@@ -13,6 +13,11 @@
     <string name="input_error_phone_invalid">enter a valid phone number</string>
     <string name="registration_success">Registered Successfully</string>
     <string name="input_error_email_invalid">enter a valid email</string>
+    <string name="ip1">Cananot access certain website.</string>
+    <string name="ip2">Slow Internet.</string>
+    <string name="ip3">One Device cannot connect to the wifi.</string>
+    <string name="ip4">Nothing can connect to wifi ?</string>
+    <string name="ip5">The network connects, but there is no internet access.</string>
 
     <array name="hostel">
         <item>Cendi</item>
