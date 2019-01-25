@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "132839142973",
+    "firebase_url": "https://iaccomm-34933.firebaseio.com",
+    "project_id": "iaccomm-34933",
+    "storage_bucket": "iaccomm-34933.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:132839142973:android:7bfa1b21a7c79cf2",
+        "android_client_info": {
+          "package_name": "com.example.vhisyhnu.iaccomm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "132839142973-gk1cr0n9j7kmsq7iisb8mshfv3seihsr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vhisyhnu.iaccomm",
+            "certificate_hash": "5edfc5af97786a1c71f486ab18b268f624ac0d25"
+          }
+        },
+        {
+          "client_id": "132839142973-5to5si7s27u86s2r95tfrp3v5d7t9kbd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB7IynM9K_YIPoB-432zt8wm0hcdw8cew"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "132839142973-5to5si7s27u86s2r95tfrp3v5d7t9kbd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
