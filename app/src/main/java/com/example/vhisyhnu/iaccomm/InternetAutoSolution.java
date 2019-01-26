@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
-public class InternetAutoSolution extends AppCompatActivity {
+public class InternetAutoSolution extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     ListView listView;
 
@@ -19,29 +19,26 @@ public class InternetAutoSolution extends AppCompatActivity {
         setContentView(R.layout.activity_internet_auto_solution);
 
         listView = (ListView) findViewById(R.id.listview);
-        String items[]= new String[] {"test", "test2"};
+        listView.setOnItemClickListener(this);
 
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,android.R.id.text1, items);
-        listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position == 0){
+    }
 
-                    Intent solution = new Intent(view.getContext(),StaffNotify.class);
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        if (position == 0){
 
-                    startActivityForResult(solution, 0);
-                }
-                if (position == 1){
+            Intent solution = new Intent(view.getContext(),StaffNotify.class);
 
-                    Intent solution = new Intent(view.getContext(),StaffNotify.class);
+            startActivityForResult(solution, 0);
+        }
+        if (position == 1){
 
-                    startActivityForResult(solution, 0);
+            Intent solution = new Intent(view.getContext(),StaffNotify.class);
 
-                }
+            startActivityForResult(solution, 0);
 
-            }
-        });
+        }
+
     }
 }
