@@ -76,7 +76,8 @@
             android:parentActivityName=".Staff.ComplaintDashboard" />
         <activity android:name=".Staff.StaffRequest"
             android:parentActivityName=".Staff.StaffDashboard"/>
-        <activity android:name=".Staff.StaffNotify"/>
+        <activity android:name=".Staff.StaffNotify"
+            android:parentActivityName=".Staff.StaffDashboard"/>
         <activity android:name=".Student.Complaint.StudentComplaint"
             android:parentActivityName=".Student.Complaint.Complaint"/>
         <activity android:name=".Admin.AdminDashboard" />

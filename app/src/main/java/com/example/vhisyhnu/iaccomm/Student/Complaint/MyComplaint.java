@@ -40,6 +40,8 @@ public class MyComplaint extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        String uid1 = "b2kAG7ljs5YKYaZsz9cPjBRJreG2";
+
         firebaseAuth = FirebaseAuth.getInstance();
         final FirebaseUser firebaseUser = firebaseAuth.getInstance().getCurrentUser();
         mDatabase = FirebaseDatabase.getInstance().getReference().child("User").child(firebaseUser.getUid()).child("My Complaint");
@@ -81,9 +83,9 @@ public class MyComplaint extends AppCompatActivity {
                 viewHolder.setPhoneNumber(items.getPhoneNumber());
                 viewHolder.setComplaint(items.getComplain());
                 viewHolder.setDesc(items.getDesc());
-
-
             }
+
+
         };
 
         mBlogList.setAdapter(firebaseRecyclerAdapter);
