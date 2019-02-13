@@ -149,7 +149,7 @@ public class StaffComplaint extends AppCompatActivity {
                     public void onClick(View v) {
 
                         new AlertDialog.Builder(StaffComplaint.this)
-                                .setMessage("Are you sure to move the complain to pending ?")
+                                .setMessage("Are you sure to move the complain to in process ?")
                                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int k) {
