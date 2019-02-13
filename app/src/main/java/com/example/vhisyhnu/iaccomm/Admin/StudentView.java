@@ -1,18 +1,24 @@
 package com.example.vhisyhnu.iaccomm.Admin;
 
+import android.content.DialogInterface;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.vhisyhnu.iaccomm.Chat.Adapter.UserAdapter;
 import com.example.vhisyhnu.iaccomm.R;
+import com.example.vhisyhnu.iaccomm.Staff.StaffRequest;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -118,6 +124,31 @@ public class StudentView extends AppCompatActivity {
                 viewHolder.setStudentId(model.getStudentId());
                 viewHolder.setEmail(model.getEmail());
 
+                final String post_id = getRef(position).getKey();
+                final DatabaseReference dataRef = mDatabase.child(post_id);
+                viewHolder.Clear.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        new AlertDialog.Builder(StudentView.this)
+                                .setMessage("Delete Student?")
+                                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int k) {
+                                        Log.d("Alert Dialog", "Positive");
+                                        dataRef.removeValue();
+                                    }
+
+                                })
+                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int y) {
+                                        Log.d("AlertDialog", "Negative");
+                                    }
+                                })
+                                .show();
+                    }
+                });
+
             }
         };
 
@@ -146,7 +177,7 @@ public class StudentView extends AppCompatActivity {
             post_Email.setText(email);
         }
 
-
+        ImageView Clear = itemView.findViewById(R.id.delete);
 
 
     }

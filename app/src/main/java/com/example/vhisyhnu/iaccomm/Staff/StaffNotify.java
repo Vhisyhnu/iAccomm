@@ -34,7 +34,7 @@ public class StaffNotify extends AppCompatActivity implements ImageAdapter.OnIte
     private RecyclerView mRecyclerView;
     private ImageAdapter mAdapter;
     private RecyclerView mBlogList;
-    private Button Clear;
+
 
 
 
@@ -48,13 +48,10 @@ public class StaffNotify extends AppCompatActivity implements ImageAdapter.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_staff_notify);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView=findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        Clear = findViewById(R.id.clearBut);
 
         mLayoutManager.setReverseLayout(true);
         mLayoutManager.setStackFromEnd(true);
