@@ -3,7 +3,14 @@
     package="com.example.vhisyhnu.iaccomm">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +19,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Student.ResetPassword"></activity>
+        <activity android:name=".Chat.MessageActivity" />
+        <activity android:name=".Chat.MainChatActivity" />
+        <activity android:name=".Student.Message.ChatsFragment" />
+        <activity android:name=".Student.Message.StudentMessage" />
+        <activity android:name=".Admin.StudentView" />
+        <activity android:name=".Staff.Search.MonthRecycler" />
+        <activity android:name=".Staff.Search.IdRecycler" />
+        <activity android:name=".Staff.Search.SearchActivity" />
+        <activity android:name=".Student.IP.InternetSolution4" />
+        <activity android:name=".Student.IP.InternetSolution3" />
+        <activity android:name=".Student.IP.InternetSolution2" />
+        <activity android:name=".Student.IP.InternetSolution1" />
+        <activity android:name=".AboutActvity" />
+        <activity android:name=".Student.IP.InternetSolution" />
+        <activity android:name=".Student.Announcement.DetailsActivity" />
+        <activity android:name=".Staff.StaffSolved" />
+        <activity android:name=".Staff.StaffInProcess" />
+        <activity android:name=".Staff.ComplaintDashboard" />
+        <activity android:name=".Student.Complaint.MyComplaint" />
+        <activity android:name=".Student.RegisterActivity" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme">
@@ -22,35 +50,47 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".StudentActivity"
+            android:name=".Student.StudentActivity"
             android:theme="@style/Theme" />
-        <activity android:name=".StudentDashboard" />
-        <activity android:name=".Complaint" />
-        <activity android:name=".Notify" />
-        <activity android:name=".links" />
-        <activity android:name=".Dashboard" />
-        <activity android:name=".Announcements" />
-        <activity android:name=".Status" />
-        <activity android:name=".Settings" />
-        <activity android:name=".StudentRequest" />
-        <activity android:name=".StudentNotify" />
+        <activity android:name=".Student.StudentDashboard" />
+        <activity android:name=".Student.Complaint.Complaint" />
+        <activity android:name=".Student.Notify.Notify" />
+        <activity android:name=".Student.Dashboard" />
+        <activity android:name=".Student.Announcement.Announcements" />
+        <activity android:name=".Student.Request.StudentRequest" />
+        <activity android:name=".Student.Notify.StudentNotify" />
         <activity
-            android:name=".StaffActivity"
+            android:name=".Staff.StaffActivity"
             android:theme="@style/Theme" />
-        <activity android:name=".StaffDashboard" />
-        <activity android:name=".StaffAnnouncement" />
-        <activity android:name=".StaffComplaint" />
-        <activity android:name=".StaffRequest" />
-        <activity android:name=".StaffNotify" />
-        <activity android:name=".ElectricityAutoSolution" />
-        <activity android:name=".StudentComplaint" />
-        <activity android:name=".AdminActivity" />
-        <activity android:name=".AdminDashboard" />
+        <activity android:name=".Staff.StaffDashboard" />
+        <activity android:name=".Staff.StaffAnnouncement" />
+        <activity android:name=".Staff.StaffComplaint" />
+        <activity android:name=".Staff.StaffRequest" />
+        <activity android:name=".Staff.StaffNotify" />
+        <activity android:name=".Student.Complaint.StudentComplaint" />
+        <activity android:name=".Admin.AdminActivity" />
+        <activity android:name=".Admin.AdminDashboard" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".InternetAutoSolution" />
-        <activity android:name=".StaffRegister" />
-        <activity android:name=".StudentRegister" />
-        <activity android:name=".DetailActivity" />
+        <activity android:name=".Student.IP.InternetAutoSolution" />
+        <activity android:name=".Admin.StaffRegister" />
+        <activity android:name=".Admin.StudentRegister" />
+
+        <service
+            android:name=".Chat.Notification.MyFirebaseIdService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".Chat.Notification.MyFirebaseMessaging"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

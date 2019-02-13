@@ -4,23 +4,55 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2e2e2e"
+    android:background="#FFFFFF"
     android:orientation="vertical"
     android:paddingLeft="30dp"
     android:paddingRight="30dp"
-    android:paddingTop="80dp"
-    tools:context=".StudentRegister"
+    android:paddingTop="20dp"
+    tools:context="Admin.StudentRegister"
     >
 
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/circle"
+            android:padding="10dp"
+            android:src="@drawable/img_register"
+            android:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="STUDENT REGISTER"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+    </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="211dp"
-        android:layout_height="127dp"
+        android:id="@+id/imageView1"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-10dp"
         android:layout_gravity="center"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="20dp"
-        app:srcCompat="@drawable/icon" />
+        android:rotation="45"
+        android:src="@drawable/square" />
+
+
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
@@ -31,7 +63,7 @@
 
             android:textColorHint="@color/white"
             android:inputType="textEmailAddress"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -47,11 +79,42 @@
             android:hint="Password"
             android:textColorHint="@color/white"
             android:inputType="textPassword"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/stname"
+            android:hint="Student Name"
+
+            android:textColorHint="@color/white"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/stid"
+            android:hint="Student Id"
+
+            android:textColorHint="@color/white"
+            android:inputType="textCapCharacters"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.design.widget.TextInputLayout>
+
 
     <ProgressBar
         android:id="@+id/loading"

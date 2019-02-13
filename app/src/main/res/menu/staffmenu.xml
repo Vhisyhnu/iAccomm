@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/st_db"
+        android:icon="@drawable/dashboard"
+        android:title="Dashboard" />
+    <item
+        android:id="@+id/st_announ"
+        android:title="Announcement" />
+    <item
+        android:id="@+id/st_logout"
+        android:icon="@drawable/logout"
+        android:title="Logout" />
+
+</menu>

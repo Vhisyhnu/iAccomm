@@ -5,14 +5,24 @@
     <string name="uas">Use Auto-Solution ?</string>
     <string name="as">Let iAccomm help you by auto-solution. This means giving some solution that might help you to get a solution for your problem</string>
     <string name="solved">Does the auto-solution solved your problem ?</string>
-    <string name="input_error_name">name required</string>
-    <string name="input_error_email">email required</string>
+    <string name="input_error_name">Name required</string>
+    <string name="input_error_email">Email required</string>
+    <string name="input_error_id">Student Id required</string>
     <string name="input_error_password">password required</string>
-    <string name="input_error_phone">phone required</string>
-    <string name="input_error_password_length">password should be atleast 6 characters long</string>
+    <string name="input_error_phone">Phone required</string>
+    <string name="input_error_password_length">Password should be atleast 6 characters long</string>
     <string name="input_error_phone_invalid">enter a valid phone number</string>
     <string name="registration_success">Registered Successfully</string>
     <string name="input_error_email_invalid">enter a valid email</string>
+
+    <string name="ip2">Try plugging a laptop into your modem directly and test your internet speed using a site like speedtest.net. If speeds are still down, the problem is likely with your Internet connection, not your router. Contact your ISP.
+    If that’s not the issue, it could be that your current wireless channel is overcrowded by your devices, or by those of other nearby networks.</string>
+    <string name="ip3">It’s probably just a momentary issue. Try turning off the Wi-Fi on your device, then re-enabling it.
+        If that doesn’t help, or if the problem re-occurs, consider deleting your current network from the list of saved networks on your device, then re-connect again.
+        If you’re running Windows 10, search for “wifi troubleshooting,” and open the result, “Identify and repair network issues.” That will go through a series of diagnostics that may restore connectivity. On MacOS, you can run Wireless Diagnostics. Hold the Options key and click the AirPort (Wi-Fi) icon on the menu bar. Find “Open Wireless Diagnostics,” and then follow the on-screen instructions.</string>
+    <string name="ip4">If you can’t connect to your Wi-Fi at all, plug your laptop into the router directly using an Ethernet cable, and see if you can connect that way. If this works, your Wi-Fi is the problem — but if it doesn’t, then your internet connectivity may be down. In that case, you’ll want to contact your ISP.</string>
+    <string name="ip5">You may refresh your wireless networks by deleting them, then re-add the SSID (wireless network) that you wish to connect to then try connecting again.</string>
+
 
     <array name="ip">
         <item>Cannot access certain website.</item>
@@ -20,6 +30,7 @@
         <item>One Device cannot connect to the wifi.</item>
         <item>Nothing can connect to wifi.</item>
         <item>The network connects, but there is no internet access.</item>
+        <item>Other.</item>
     </array>
 
     <array name="hostel">
@@ -57,5 +68,26 @@
         <item>Other</item>
     </string-array>
 
+    <string name="about">The Accommodation Care System (iAccomm) is an accommodation managing mobile-based application that allows students to make complaints, request, reports and notify regarding UNITEN accommodation through online. Students can notify accommodation management if there are any problems in hostel they staying and request for the solution or help. This mobile application contains auto issue solving methods which has been set in to the database. If the auto solution didn’t solve the problem, this application also allows the UNITEN Accommodation Department to view, handle, manage, respond to all the complaints and take immediate action on it. There is a process for investigating complaints and then a way of resolving and following up.</string>
+
+    <string-array name="months">
+
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

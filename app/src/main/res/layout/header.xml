@@ -1,30 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="160dp"
-    android:background="@color/darkergray"
+    android:background="@color/gray"
     android:padding="20dp">
 
     <ImageView
-        android:layout_width="69dp"
-        android:layout_height="75dp"
-        android:src="@drawable/sicon" />
-
-
-    <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/imageView7"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="8dp"
-        android:text="Vhisyhnu A/L Vimilan"
-        android:textStyle="bold"
-        android:textColor="@color/white" />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="vhisyhnu@gmail.com"
-        android:textColor="@color/white"/>
-
+        app:srcCompat="@drawable/mlogo" />
 </LinearLayout>

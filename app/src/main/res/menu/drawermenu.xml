@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home"
+            android:title="Home" />
         <item
             android:id="@+id/nav_db"
             android:icon="@drawable/dashboard"
@@ -11,13 +13,9 @@
             android:icon="@drawable/announcement"
             android:title="Announcements" />
         <item
-            android:id="@+id/nav_status"
-            android:icon="@drawable/status"
-            android:title="Status" />
-        <item
-            android:id="@+id/nav_settings"
+            android:id="@+id/nav_change"
             android:icon="@drawable/settings"
-            android:title="Settings" />
+            android:title="Reset Password" />
         <item
             android:id="@+id/logout"
             android:icon="@drawable/logout"

@@ -1,41 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/dl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.vhisyhnu.iaccomm.StaffNotify">
+    android:orientation="vertical"
+    tools:context=".Staff.StaffNotify">
 
-    <FrameLayout
-
-        android:orientation="vertical"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/flcontent">
+        android:layout_height="wrap_content"
+        android:text="Notifications"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/colorPrimaryDark" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_weight="0.5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-        <android.support.v7.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/lmyrecycleview">
-        </android.support.v7.widget.RecyclerView>
-
-    </FrameLayout>
-
-    <android.support.design.widget.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:background="@color/white"
-        android:id="@+id/nv"
-        app:headerLayout="@layout/header"
-        app:itemIconTint="@color/darkgray"
-        app:itemTextColor="@color/darkgray"
-        app:menu="@menu/drawermenu">
-
-    </android.support.design.widget.NavigationView>
+</LinearLayout>
 
 
 
 
-</android.support.v4.widget.DrawerLayout>
+
