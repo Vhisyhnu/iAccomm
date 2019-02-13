@@ -10,7 +10,6 @@ public class Request {
     private String mID;
     private String mRoomNumber;
     private String mPhoneNumber;
-    private String mHostel;
 
     public Request() {
 
@@ -18,7 +17,7 @@ public class Request {
 
 
 
-    public Request(String date, String time, String studentRequest, String Name, String ID, String RoomNumber, String PhoneNumber, String Hostel){
+    public Request(String date, String time, String studentRequest, String Name, String ID, String RoomNumber, String PhoneNumber){
         this.date = date;
         this.time = time;
         this.studentRequest = studentRequest;
@@ -26,7 +25,6 @@ public class Request {
         mID = ID;
         mRoomNumber = RoomNumber;
         mPhoneNumber=PhoneNumber;
-        mHostel=Hostel;
     }
 
     public String getName() {
@@ -43,14 +41,6 @@ public class Request {
 
     public void setID(String ID) {
         mID = ID;
-    }
-
-    public String getHostel() {
-        return mHostel;
-    }
-
-    public void setHostel(String Hostel) {
-        mRoomNumber = Hostel;
     }
 
     public String getRoomNumber() {

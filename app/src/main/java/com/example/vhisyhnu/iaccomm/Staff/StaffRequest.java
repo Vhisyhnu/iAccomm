@@ -20,12 +20,15 @@ import com.example.vhisyhnu.iaccomm.R;
 import com.example.vhisyhnu.iaccomm.Student.Request.rBlog;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class StaffRequest extends AppCompatActivity {
 
     private RecyclerView mBlogList;
+    private FirebaseAuth firebaseAuth;
+    private FirebaseUser firebaseUser;
     private DatabaseReference mDatabase;
 
     @Override
@@ -34,7 +37,9 @@ public class StaffRequest extends AppCompatActivity {
         setContentView(R.layout.activity_staff_request);
 
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
-        mDatabase=FirebaseDatabase.getInstance().getReference().child("Request");
+        firebaseAuth = FirebaseAuth.getInstance();
+        final FirebaseUser firebaseUser = firebaseAuth.getInstance().getCurrentUser();
+        mDatabase=FirebaseDatabase.getInstance().getReference().child("User").child(firebaseUser.getUid()).child("Request");
         mDatabase.keepSynced(true);
 
         mBlogList=findViewById(R.id.mmyrecycleview);
@@ -58,7 +63,6 @@ public class StaffRequest extends AppCompatActivity {
                 viewHolder.setTime(model.getTime());
                 viewHolder.setName(model.getName());
                 viewHolder.setID(model.getID());
-                viewHolder.setHostel(model.getHostel());
                 viewHolder.setRoomNumber(model.getRoomNumber());
                 viewHolder.setPhoneNumber(model.getPhoneNumber());
                 viewHolder.setStudentRequest(model.getStudentRequest());
@@ -119,11 +123,6 @@ public class StaffRequest extends AppCompatActivity {
         public void setID(String id){
             TextView post_id=mView.findViewById(R.id.post_id);
             post_id.setText(id);
-        }
-
-        public void setHostel(String hostel){
-            TextView post_hostel=mView.findViewById(R.id.post_hostel);
-            post_hostel.setText(hostel);
         }
 
         public void setRoomNumber(String room){

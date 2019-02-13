@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.EditText;
@@ -23,6 +26,7 @@ import com.example.vhisyhnu.iaccomm.Chat.Notification.Data;
 import com.example.vhisyhnu.iaccomm.Chat.Notification.MyResponse;
 import com.example.vhisyhnu.iaccomm.Chat.Notification.Sender;
 import com.example.vhisyhnu.iaccomm.Chat.Notification.Token;
+import com.example.vhisyhnu.iaccomm.LoginActivity;
 import com.example.vhisyhnu.iaccomm.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -251,4 +255,25 @@ public class MessageActivity extends AppCompatActivity {
         super.onPause();
         reference.removeEventListener(seenListener);
     }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.chatmenu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.chat_logout:
+                FirebaseAuth.getInstance().signOut();
+                finish();
+                startActivity(new Intent (MessageActivity.this, LoginActivity.class));
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return true;
+    }
+
 }

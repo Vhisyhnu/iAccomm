@@ -1,5 +1,6 @@
 package com.example.vhisyhnu.iaccomm.Chat;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -9,6 +10,9 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
@@ -17,7 +21,12 @@ import com.example.vhisyhnu.iaccomm.Chat.Fragments.ChatsFragment;
 import com.example.vhisyhnu.iaccomm.Chat.Fragments.UsersFragment;
 import com.example.vhisyhnu.iaccomm.Chat.Model.Chat;
 import com.example.vhisyhnu.iaccomm.Chat.Model.User;
+import com.example.vhisyhnu.iaccomm.LoginActivity;
 import com.example.vhisyhnu.iaccomm.R;
+import com.example.vhisyhnu.iaccomm.Student.Announcement.Announcements;
+import com.example.vhisyhnu.iaccomm.Student.Dashboard;
+import com.example.vhisyhnu.iaccomm.Student.ResetPassword;
+import com.example.vhisyhnu.iaccomm.Student.StudentDashboard;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -44,28 +53,8 @@ public class MainChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_chat);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-
-        profile_image = findViewById(R.id.profile_image);
-        username = findViewById(R.id.username);
-
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("User").child(firebaseUser.getUid());
-
-
-
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                User user = dataSnapshot.getValue(User.class);
-                username.setText(user.getUsername());
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
 
         final TabLayout tabLayout = findViewById(R.id.tab_layout);
         final ViewPager viewPager = findViewById(R.id.view_pager);
@@ -139,5 +128,29 @@ public class MainChatActivity extends AppCompatActivity {
             return titles.get(position);
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.chatmenu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.chat_logout:
+                FirebaseAuth.getInstance().signOut();
+                finish();
+                startActivity(new Intent (MainChatActivity.this, LoginActivity.class));
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return true;
+    }
+
+
+
 
 }

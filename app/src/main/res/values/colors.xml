@@ -19,4 +19,5 @@
     <color name="black">#000000</color>
     <color name="gray">#383636</color>
     <color name="chatblue">#3eaeae</color>
+    <color name="but">#D5D5D8</color>
 </resources>

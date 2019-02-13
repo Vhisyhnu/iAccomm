@@ -51,8 +51,11 @@ public class StaffDashboard extends AppCompatActivity implements View.OnClickLis
         requestCard.setOnClickListener(this);
         notifyCard.setOnClickListener(this);
 
+        firebaseAuth = FirebaseAuth.getInstance();
+        final FirebaseUser firebaseUser = firebaseAuth.getInstance().getCurrentUser();
+        reference1=FirebaseDatabase.getInstance().getReference().child("User").child(firebaseUser.getUid()).child("Request");
+
         reference = FirebaseDatabase.getInstance().getReference().child("Notification");
-        reference1 = FirebaseDatabase.getInstance().getReference().child("Request");
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override

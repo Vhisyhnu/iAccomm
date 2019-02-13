@@ -17,7 +17,10 @@ import com.example.vhisyhnu.iaccomm.LoginActivity;
 import com.example.vhisyhnu.iaccomm.R;
 import com.example.vhisyhnu.iaccomm.Student.Announcement.Announcements;
 import com.example.vhisyhnu.iaccomm.Student.Complaint.MyComplaint;
+import com.example.vhisyhnu.iaccomm.Student.Complaint.StudentComplaint;
+import com.example.vhisyhnu.iaccomm.Student.Complaint.StudentDetails;
 import com.example.vhisyhnu.iaccomm.Student.Dashboard;
+import com.example.vhisyhnu.iaccomm.Student.Notify.StudentNotify;
 import com.example.vhisyhnu.iaccomm.Student.ResetPassword;
 import com.example.vhisyhnu.iaccomm.Student.StudentDashboard;
 import com.google.firebase.auth.FirebaseAuth;
@@ -37,6 +40,8 @@ public class StudentRequest extends AppCompatActivity {
     EditText editTextRequest;
     Button buttonAdd;
 
+    private int count = 0;
+
 
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
@@ -50,9 +55,6 @@ public class StudentRequest extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_request);
 
-        databaseRequests = FirebaseDatabase.getInstance().getReference("Request");
-
-
         editTextRequest = findViewById(R.id.editTextRequest);
         buttonAdd = findViewById(R.id.buttonAddRequest);
 
@@ -60,45 +62,89 @@ public class StudentRequest extends AppCompatActivity {
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addRequest();
+                sendData();
             }
         });
     }
-    private void addRequest() {
+
+    private void sendData(){
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Calendar calendar = Calendar.getInstance();
+            public void onDataChange(DataSnapshot dataSnapshot) {
 
-                String currentdate = DateFormat.getDateInstance().format(calendar.getTime());
-                SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
-                String time = format.format(calendar.getTime());
-                String user_name = dataSnapshot.child(firebaseUser.getUid()).child("name").getValue().toString();
-                String user_id = dataSnapshot.child(firebaseUser.getUid()).child("studentId").getValue().toString();
-                String user_RN=dataSnapshot.child(firebaseUser.getUid()).child("RoomDetails").child("room").getValue().toString();
-                String user_PN=dataSnapshot.child(firebaseUser.getUid()).child("RoomDetails").child("spinner").getValue().toString();
-                String user_HN=dataSnapshot.child(firebaseUser.getUid()).child("RoomDetails").child("number").getValue().toString();
-                String arequest = editTextRequest.getText().toString().trim();
 
-                if (!TextUtils.isEmpty(arequest)) {
-                    String id = databaseRequests.push().getKey();
-                    Request request = new Request(currentdate, time, arequest, user_name, user_id, user_RN, user_HN, user_PN);
+                while (count < 1) {
 
-                    databaseRequests.child(id).setValue(request);
+                    Calendar calendar = Calendar.getInstance();
 
-                    Toast.makeText(StudentRequest.this, "Request Sent", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(StudentRequest.this, Dashboard.class);
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(StudentRequest.this, "You should enter your request", Toast.LENGTH_LONG).show();
+                    String currentdate = DateFormat.getDateInstance().format(calendar.getTime());
+                    SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
+                    String time = format.format(calendar.getTime());
+                    String user_name = dataSnapshot.child(firebaseUser.getUid()).child("name").getValue().toString();
+                    String user_id = dataSnapshot.child(firebaseUser.getUid()).child("studentId").getValue().toString();
+                    String user_RN=dataSnapshot.child(firebaseUser.getUid()).child("RoomDetails").child("room").getValue().toString();
+                    String user_HN=dataSnapshot.child(firebaseUser.getUid()).child("RoomDetails").child("spinner").getValue().toString();
+                    String user_PN=dataSnapshot.child(firebaseUser.getUid()).child("RoomDetails").child("number").getValue().toString();
+                    String arequest = editTextRequest.getText().toString().trim();
+
+                    if (user_HN.equals("Ilmu")) {
+                        String uid1 = "pUZNPM3E6URqSOLX4rX4BIWnA5k2";
+
+                        Request request = new Request(currentdate, time, arequest, user_name, user_id, user_RN, user_PN);
+
+                        String uploadId2 = reference.push().getKey();
+                        reference.child(uid1).child("Request").child(uploadId2).setValue(request);
+                        count++;
+                        Toast.makeText(StudentRequest.this, "Request Sent!", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(StudentRequest.this, Dashboard.class);
+                        startActivity(intent);
+
+                    }else if(user_HN.equals("Cendi"))
+                    {
+                        String uid1 = "b2kAG7ljs5YKYaZsz9cPjBRJreG2";
+
+                        Request request = new Request(currentdate, time, arequest, user_name, user_id, user_RN, user_PN);
+
+                        String uploadId2 = reference.push().getKey();
+                        reference.child(uid1).child("Request").child(uploadId2).setValue(request);
+                        count++;
+                        Toast.makeText(StudentRequest.this, "Request Sent!", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(StudentRequest.this, Dashboard.class);
+                        startActivity(intent);
+                    }else if(user_HN.equals("Amanah"))
+                    {
+                        String uid1 = "2MXn4aUNi4cQSBTX7xAzYnXUWvz1";
+
+                        Request request = new Request(currentdate, time, arequest, user_name, user_id, user_RN, user_PN);
+
+                        String uploadId2 = reference.push().getKey();
+                        reference.child(uid1).child("Request").child(uploadId2).setValue(request);
+                        count++;
+                        Toast.makeText(StudentRequest.this, "Request Sent!", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(StudentRequest.this, Dashboard.class);
+                        startActivity(intent);
+                    }else
+                    {
+                        String uid1 = "fdsSmY2hbOZsXe0Ac8Fxrf90hmH2";
+
+                        Request request = new Request(currentdate, time, arequest, user_name, user_id, user_RN, user_PN);
+
+                        String uploadId2 = reference.push().getKey();
+                        reference.child(uid1).child("Request").child(uploadId2).setValue(request);
+                        count++;
+                        Toast.makeText(StudentRequest.this, "Request Sent!", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(StudentRequest.this, Dashboard.class);
+                        startActivity(intent);
+                    }
                 }
-
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                Toast.makeText(StudentRequest.this, "Failed To Sent", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(StudentRequest.this, Dashboard.class);
+                startActivity(intent);
             }
         });
 

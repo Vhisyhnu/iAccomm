@@ -19,6 +19,7 @@ import com.example.vhisyhnu.iaccomm.R;
 import com.example.vhisyhnu.iaccomm.Student.Announcement.Announcements;
 import com.example.vhisyhnu.iaccomm.Student.Dashboard;
 import com.example.vhisyhnu.iaccomm.Student.Notify.StudentNotify;
+import com.example.vhisyhnu.iaccomm.Student.Request.StudentRequest;
 import com.example.vhisyhnu.iaccomm.Student.ResetPassword;
 import com.example.vhisyhnu.iaccomm.Student.StudentDashboard;
 import com.google.firebase.auth.FirebaseAuth;
@@ -107,6 +108,8 @@ public class StudentComplaint extends AppCompatActivity {
                         reference.child(uid1).child("All Details").child(uploadId2).setValue(studentDetails);
                         count++;
                         Toast.makeText(StudentComplaint.this, "Complaint Sent!", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(StudentComplaint.this, Dashboard.class);
+                        startActivity(intent);
 
                     }else if(user_HN.equals("Cendi"))
                     {
@@ -120,6 +123,8 @@ public class StudentComplaint extends AppCompatActivity {
                         reference.child(uid1).child("All Details").child(uploadId2).setValue(studentDetails);
                         count++;
                         Toast.makeText(StudentComplaint.this, "Complaint Sent!", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(StudentComplaint.this, Dashboard.class);
+                        startActivity(intent);
                     }else if(user_HN.equals("Amanah"))
                     {
                         String uid1 = "2MXn4aUNi4cQSBTX7xAzYnXUWvz1";
@@ -132,6 +137,8 @@ public class StudentComplaint extends AppCompatActivity {
                         reference.child(uid1).child("All Details").child(uploadId2).setValue(studentDetails);
                         count++;
                         Toast.makeText(StudentComplaint.this, "Complaint Sent!", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(StudentComplaint.this, Dashboard.class);
+                        startActivity(intent);
                     }else
                     {
                         String uid1 = "fdsSmY2hbOZsXe0Ac8Fxrf90hmH2";
@@ -144,6 +151,8 @@ public class StudentComplaint extends AppCompatActivity {
                         reference.child(uid1).child("All Details").child(uploadId2).setValue(studentDetails);
                         count++;
                         Toast.makeText(StudentComplaint.this, "Complaint Sent!", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(StudentComplaint.this, Dashboard.class);
+                        startActivity(intent);
                     }
                 }
             }
@@ -151,6 +160,8 @@ public class StudentComplaint extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Toast.makeText(StudentComplaint.this, "Failed To Sent", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(StudentComplaint.this, Dashboard.class);
+                startActivity(intent);
             }
         });
 
