@@ -51,6 +51,8 @@ public class StudentComplaint extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_complaint);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         desc = findViewById(R.id.editTextComplaint);
         butAdd = findViewById(R.id.buttonAddComplaint);
         complain = findViewById(R.id.spinnerComplaints);

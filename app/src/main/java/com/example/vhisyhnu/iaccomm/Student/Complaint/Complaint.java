@@ -36,6 +36,8 @@ public class Complaint extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complaint);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         butOther = (Button) findViewById(R.id.butOther);
         butInternet = (Button) findViewById(R.id.butInternet);
         epicDialog = new Dialog(this);

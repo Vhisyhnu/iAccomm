@@ -43,6 +43,8 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         spinner = findViewById(R.id.monthsC);
 
         mSearch = findViewById(R.id.search_month);

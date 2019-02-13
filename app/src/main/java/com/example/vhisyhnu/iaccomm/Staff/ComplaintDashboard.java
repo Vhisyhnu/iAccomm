@@ -42,6 +42,8 @@ public class ComplaintDashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complaint_dashboard);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         Com = findViewById(R.id.first);
         Sol = findViewById(R.id.second);

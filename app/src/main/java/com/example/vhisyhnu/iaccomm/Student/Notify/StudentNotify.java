@@ -71,6 +71,8 @@ public class StudentNotify extends AppCompatActivity {
         uploadProgress = findViewById(R.id.uploadProgress);
         btnUploadImage = findViewById(R.id.buttonAddNotify);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         imgDescription = findViewById(R.id.editTextNotify);
         imgPreview = findViewById(R.id.notify_image);
 

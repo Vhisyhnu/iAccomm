@@ -29,6 +29,8 @@ public class InternetAutoSolution extends AppCompatActivity implements AdapterVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_internet_auto_solution);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         listView = (ListView) findViewById(R.id.listview);
         listView.setOnItemClickListener(this);
 

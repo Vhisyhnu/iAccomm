@@ -36,6 +36,8 @@ public class StaffRequest extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_staff_request);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         firebaseAuth = FirebaseAuth.getInstance();
         final FirebaseUser firebaseUser = firebaseAuth.getInstance().getCurrentUser();

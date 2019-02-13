@@ -29,7 +29,6 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-
         complaintCard =(CardView) findViewById(R.id.complaint_card);
         requestCard =(CardView) findViewById(R.id.request_card);
         notifyCard = (CardView) findViewById(R.id.notify_card);

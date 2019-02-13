@@ -41,6 +41,8 @@ public class StudentRegister extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_register);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         editTextEmail = findViewById(R.id.stemail);
         editTextPassword = findViewById(R.id.stpassword);
         editTextName = findViewById(R.id.stname);

@@ -40,6 +40,8 @@ public class StudentView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_view);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         mDatabase= FirebaseDatabase.getInstance().getReference().child("Student");
         mDatabase.keepSynced(true);

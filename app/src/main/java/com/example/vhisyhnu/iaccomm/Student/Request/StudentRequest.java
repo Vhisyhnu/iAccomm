@@ -55,6 +55,8 @@ public class StudentRequest extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_request);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         editTextRequest = findViewById(R.id.editTextRequest);
         buttonAdd = findViewById(R.id.buttonAddRequest);
 

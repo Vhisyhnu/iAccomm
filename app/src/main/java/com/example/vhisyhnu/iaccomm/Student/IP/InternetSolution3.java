@@ -27,6 +27,8 @@ public class InternetSolution3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_internet_solution3);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         yesBut = (Button) findViewById(R.id.yesBut);
         noBut = (Button) findViewById(R.id.noBut);
 
